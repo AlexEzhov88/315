@@ -78,56 +78,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 }
 
-
-//    @Transactional
-//    @Override
-//    public void updateUser(User user) {
-//        if (!user.getPassword().isEmpty()) {
-//            if (!getUserById(user.getId()).getPassword().equals(user.getPassword())) {
-//                user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-//            }
-//        } else {
-//            user.setPassword(getUserById(user.getId()).getPassword());
-//        }
-//        userRepository.save(user);
-//    }
-
-
-//    @Transactional
-//    @Override
-//    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-//        User user = userRepository.findByEmail(email);
-//        if (user == null) {
-//            throw new UsernameNotFoundException(String.format("Email '%s' not found", email));
-//        }
-//        return new org.springframework.security.core.userdetails.User(user.getUsername(),
-//                user.getPassword(), user.getAuthorities());
-//    }
-
-// Для РЕСТ
-//    @Override
-//    public User convertToUser(UserDto userDTO) {
-//        return mapper.map(userDTO, User.class);
-//    }
-//
-//    @Override
-//    public UserDto convertToDTO(User user) {
-//        return mapper.map(user, UserDto.class);
-//    }
-
-
-//    @Transactional
-//    @Override
-//    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-//        User user = userRepository.getUserByEmail(email);
-//
-//        if(user == null) {
-//            throw new UsernameNotFoundException("Email not found!");
-//        }
-//        Hibernate.initialize(user.getRoles());
-//        return user;
-
-
 // В этом классе мы используем UserRepository, RoleService и BCryptPasswordEncoder.
 // UserRepository используется для доступа к базе данных, RoleService используется для получения
 // списка всех ролей пользователей, а BCryptPasswordEncoder используется для шифрования паролей пользователей.
